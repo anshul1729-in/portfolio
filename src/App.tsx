@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ArchitectureVisualizer } from './components/ArchitectureVisualizer';
 import { ProjectsSection } from './components/ProjectsSection';
-import { ResumeHub } from './components/ResumeHub';
 import { SkillsSection } from './components/SkillsSection';
 import { ExperienceEducation } from './components/ExperienceEducation';
 import { ContactSection } from './components/ContactSection';
@@ -42,12 +41,6 @@ export function App() {
 
         {/* Interactive Architecture Simulators */}
         <ArchitectureVisualizer />
-
-        {/* 3-in-1 Resume Station */}
-        <ResumeHub
-          activeTrack={activeTrack}
-          onTrackChange={setActiveTrack}
-        />
 
         {/* Flagship Projects Showcase */}
         <ProjectsSection activeTrack={activeTrack} />

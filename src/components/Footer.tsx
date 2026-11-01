@@ -40,9 +40,9 @@ export const Footer: FC<FooterProps> = ({ onOpenTerminal }) => {
             <span>•</span>
             <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
             <span>•</span>
-            <a href="#resumes" className="hover:text-cyan-400 transition-colors">3-in-1 Resumes</a>
-            <span>•</span>
             <a href="#timeline" className="hover:text-cyan-400 transition-colors">Timeline</a>
+            <span>•</span>
+            <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
             <span>•</span>
             <button
               onClick={onOpenTerminal}

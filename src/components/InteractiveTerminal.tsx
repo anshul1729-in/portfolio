@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import type { FC, KeyboardEvent } from 'react';
 import { Terminal as TerminalIcon, X } from 'lucide-react';
-import { TERMINAL_COMMANDS, PERSONAL_INFO, RESUME_TRACKS } from '../data/portfolioData';
+import { TERMINAL_COMMANDS, PERSONAL_INFO } from '../data/portfolioData';
 
 interface InteractiveTerminalProps {
   isOpen: boolean;
@@ -45,7 +45,7 @@ export const InteractiveTerminal: FC<InteractiveTerminalProps> = ({ isOpen, onCl
 
   if (!isOpen) return null;
 
-  const quickCommands = ['help', 'projects', 'curl raft', 'curl cont', 'resumes', 'skills', 'contact', 'clear'];
+  const quickCommands = ['help', 'projects', 'curl raft', 'curl cont', 'skills', 'education', 'contact', 'clear'];
 
   const executeCommand = (cmdStr: string) => {
     const trimmed = cmdStr.trim();
@@ -72,49 +72,6 @@ export const InteractiveTerminal: FC<InteractiveTerminalProps> = ({ isOpen, onCl
         id: Math.random().toString(),
         command: trimmed,
         output: [new Date().toString()]
-      }]);
-      setInputVal('');
-      return;
-    }
-
-    if (lower.startsWith('cat ')) {
-      const target = lower.replace('cat ', '').trim();
-      const matchResume = RESUME_TRACKS.find(r => r.id === target || r.title.toLowerCase().includes(target));
-      if (matchResume) {
-        setHistory(prev => [...prev, {
-          id: Math.random().toString(),
-          command: trimmed,
-          output: [
-            `--- [ RESUME: ${matchResume.title} ] ---`,
-            `Target Roles: ${matchResume.targetRoles.join(', ')}`,
-            `Summary: ${matchResume.summary}`,
-            `PDF File: ${matchResume.filePath}`,
-            `Key Highlights:`,
-            ...matchResume.keyHighlights.map(h => `  • ${h}`)
-          ]
-        }]);
-      } else {
-        setHistory(prev => [...prev, {
-          id: Math.random().toString(),
-          command: trimmed,
-          output: [`cat: ${target}: No such resume found. Options: 'cat systems', 'cat core', 'cat fullstack'`]
-        }]);
-      }
-      setInputVal('');
-      return;
-    }
-
-    if (lower === 'resumes') {
-      setHistory(prev => [...prev, {
-        id: Math.random().toString(),
-        command: trimmed,
-        output: [
-          "Available ATS Resumes:",
-          "  • systems   -> Cloud Infrastructure & Systems Engineer (Go, Linux, Cgroups)",
-          "  • core      -> Core Software Engineer (Distributed Systems, Raft, C POSIX)",
-          "  • fullstack -> AI & Full-Stack Software Engineer (Next.js, Supabase, Web3)",
-          "Usage: cat <systems|core|fullstack>"
-        ]
       }]);
       setInputVal('');
       return;

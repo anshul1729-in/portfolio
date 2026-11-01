@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import type { FC, FormEvent } from 'react';
-import { Mail, Phone, MapPin, ExternalLink, Send, Copy, Check, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, ExternalLink, Send, Copy, Check, MessageSquare } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const ContactSection: FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [sentSuccess, setSentSuccess] = useState(false);
 
@@ -14,12 +13,6 @@ export const ContactSection: FC = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const copyPhone = () => {
-    navigator.clipboard.writeText(PERSONAL_INFO.phone);
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   const handleSubmit = (e: FormEvent) => {
@@ -79,31 +72,6 @@ export const ContactSection: FC = () => {
                 title="Copy Email"
               >
                 {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-              </button>
-            </div>
-
-            {/* Phone Card */}
-            <div className="glass-card p-5 rounded-2xl border border-slate-800 flex items-center justify-between">
-              <div className="flex items-center gap-3.5">
-                <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-mono text-slate-400">Mobile / WhatsApp</div>
-                  <a
-                    href={`tel:${PERSONAL_INFO.phone}`}
-                    className="text-sm font-mono font-semibold text-white hover:text-emerald-400 transition-colors"
-                  >
-                    {PERSONAL_INFO.phone}
-                  </a>
-                </div>
-              </div>
-              <button
-                onClick={copyPhone}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Copy Phone"
-              >
-                {copiedPhone ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
 

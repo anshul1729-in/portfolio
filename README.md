@@ -8,34 +8,27 @@ A modern, high-performance developer portfolio built with **React 19**, **TypeSc
 
 ## 🌟 Key Highlights & Engineering Features
 
-1. **3-in-1 Role-Tailored Resume Station (`#resumes`):**
-   - Features 3 specialized ATS-tailored resumes directly viewable and downloadable:
-     - 🚀 **Cloud Infrastructure & Systems Engineer** (`/resumes/Anshul_Pal_Cloud_Systems_Resume.pdf`)
-     - ⚡ **Core Software Engineer** (`/resumes/Anshul_Pal_Core_SWE_Resume.pdf`)
-     - 🤖 **AI & Full-Stack Software Engineer** (`/resumes/Anshul_Pal_AI_FullStack_Resume.pdf`)
-   - Interactive role selector dynamically highlights relevant projects, key bullets, and download options.
-
-2. **First-Principles Architecture Simulators (`#architecture`):**
+1. **First-Principles Architecture Simulators (`#architecture`):**
    - **Miniraft (Raft Consensus Simulator):** Live interactive simulation of 3-node distributed consensus, two-phase commit log replication, quorum verification ($\lfloor 3/2 \rfloor + 1 = 2$), randomized leader election timeouts (300–600ms), and automated `kill -9` leader failover (~400ms).
    - **Minicontainer (Linux Sandbox Engine):** Live simulation of `CLONE_NEWPID`, `CLONE_NEWNS`, `pivot_root`, and Linux Cgroups v2 hardware bounds (50MB RAM ceiling and 50% CPU core quota).
 
-3. **Flagship Proof-of-Work Showcase (`#projects`):**
+2. **Flagship Proof-of-Work Showcase (`#projects`):**
    - Real-time search and filter by domain (`Distributed & Consensus`, `Linux & Systems`, `Full-Stack & Web3`, `CLI & Low-Level`).
    - One-click `git clone` command copying.
    - Expandable architecture diagrams and metrics tags for each project (`miniraft`, `minicontainer`, `minishell`, `NeonWave`, `Sanctuary`, `Cendex`, `Amigo-CLI`, `personal-email-server`, `http-server-py`).
 
-4. **Interactive Systems Terminal / CLI (`$ ./anshul.sh`):**
+3. **Interactive Systems Terminal / CLI (`$ ./anshul.sh`):**
    - Built-in interactive Unix-like shell with command history, tab autocomplete suggestions, and executable commands:
-     - `help`, `whoami`, `about`, `projects`, `skills`, `education`, `experience`, `resumes`, `cat <systems|core|fullstack>`, `curl raft`, `curl cont`, `contact`, `clear`.
+     - `help`, `whoami`, `about`, `projects`, `skills`, `education`, `experience`, `curl raft`, `curl cont`, `contact`, `clear`.
    - Accessible via the **CLI Mode** button or keyboard shortcut (`Ctrl + \`` or `Cmd + K`).
 
-5. **Education & Trajectory (`#timeline`):**
+4. **Education & Trajectory (`#timeline`):**
    - Academic credentials: **Bachelor of Computer Applications (BCA) – Computer Science** at **Amity University**, expected graduation **July 2027**.
    - Work Experience: Freelance SWE at **PropertyLay** (Next.js App Router, Sub-second LCP, zero layout shift).
 
-6. **Contact & Direct Transmission (`#contact`):**
+5. **Contact & Direct Transmission (`#contact`):**
    - Direct mailto dispatch form.
-   - 1-click clipboard copy for email (`anshul6272@gmail.com`) and phone (`+91 8287481934`).
+   - 1-click clipboard copy for email (`anshul6272@gmail.com`).
    - Verified profile links to GitHub (`@anshul1729-in`) and LinkedIn (`/in/anshulpal101`).
 
 ---
@@ -73,8 +66,5 @@ pnpm preview
 
 ### Deploy to Vercel
 ```bash
-npx vercel
+vercel --prod
 ```
-
-### Deploy to GitHub Pages
-The project is built as a zero-dependency static application. You can push this repo to GitHub and enable GitHub Pages on the `dist` folder or use GitHub Actions.

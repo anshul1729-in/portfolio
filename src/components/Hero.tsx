@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FC } from 'react';
-import { Terminal, ArrowRight, Download, Sparkles, Server, Cpu, Database, Copy, Check } from 'lucide-react';
+import { Terminal, ArrowRight, Sparkles, Server, Cpu, Database, Copy, Check, Layers } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroProps {
@@ -83,11 +83,11 @@ export const Hero: FC<HeroProps> = ({ activeTrack, onTrackChange, onOpenTerminal
             </a>
 
             <a
-              href="#resumes"
+              href="#architecture"
               className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 text-slate-200 font-medium text-sm sm:text-base flex items-center gap-2 transition-all hover:scale-[1.02]"
             >
-              <Download className="w-4 h-4 text-cyan-400" />
-              <span>3 Tailored Resumes</span>
+              <Layers className="w-4 h-4 text-cyan-400" />
+              <span>Interactive Simulators</span>
             </a>
 
             <button
@@ -122,9 +122,9 @@ export const Hero: FC<HeroProps> = ({ activeTrack, onTrackChange, onOpenTerminal
             <div className="text-xs font-mono text-slate-400 mb-2 flex items-center justify-between px-2">
               <span className="flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                Customize View for Recruiter / Hiring Focus:
+                Filter Proof-of-Work by Engineering Discipline:
               </span>
-              <span className="text-[11px] text-slate-500">Filter projects &amp; resumes</span>
+              <span className="text-[11px] text-slate-500">Highlight focus areas</span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">

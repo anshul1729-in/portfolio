@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { FC } from 'react';
-import { Terminal, FileText, Code2, Cpu, User, Mail, Menu, X } from 'lucide-react';
+import { Terminal, Code2, Cpu, User, Mail, Menu, X } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -24,7 +24,6 @@ export const Navbar: FC<NavbarProps> = ({ onOpenTerminal }) => {
     { name: 'Projects', href: '#projects', icon: Code2 },
     { name: 'Architecture', href: '#architecture', icon: Cpu },
     { name: 'Skills', href: '#skills', icon: Terminal },
-    { name: '3-in-1 Resumes', href: '#resumes', icon: FileText, highlight: true },
     { name: 'Timeline', href: '#timeline', icon: User },
     { name: 'Contact', href: '#contact', icon: Mail },
   ];
@@ -62,11 +61,7 @@ export const Navbar: FC<NavbarProps> = ({ onOpenTerminal }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all flex items-center gap-1.5 ${
-                  link.highlight
-                    ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-                }`}
+                className="px-3.5 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800/60"
               >
                 <Icon className="w-3.5 h-3.5 opacity-70" />
                 {link.name}
@@ -109,11 +104,11 @@ export const Navbar: FC<NavbarProps> = ({ onOpenTerminal }) => {
           </a>
 
           <a
-            href="#resumes"
+            href="#contact"
             className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-semibold text-xs transition-all shadow-md shadow-cyan-500/20 flex items-center gap-1.5"
           >
-            <FileText className="w-3.5 h-3.5" />
-            <span>Resumes (3)</span>
+            <Mail className="w-3.5 h-3.5" />
+            <span>Get in Touch</span>
           </a>
         </div>
 
@@ -169,11 +164,11 @@ export const Navbar: FC<NavbarProps> = ({ onOpenTerminal }) => {
               LinkedIn
             </a>
             <a
-              href="#resumes"
+              href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="flex-1 py-2 text-center text-xs font-semibold bg-cyan-500 text-slate-950 rounded-lg"
             >
-              Resumes
+              Contact
             </a>
           </div>
         </div>

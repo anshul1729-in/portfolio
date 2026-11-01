@@ -22,20 +22,6 @@ export interface SkillCategory {
   skills: { name: string; level: 'Mastery' | 'Advanced' | 'Proficient'; context?: string }[];
 }
 
-export interface ResumeTrack {
-  id: 'fullstack' | 'systems' | 'core';
-  title: string;
-  subtitle: string;
-  fileName: string;
-  filePath: string;
-  badge: string;
-  badgeColor: string;
-  summary: string;
-  targetRoles: string[];
-  keyHighlights: string[];
-  featuredProjects: string[];
-}
-
 export const PERSONAL_INFO = {
   name: "Anshul Pal",
   handle: "anshul1729-in",
@@ -60,7 +46,6 @@ export const PERSONAL_INFO = {
   },
   location: "New Delhi, India",
   email: "anshul6272@gmail.com",
-  phone: "+91 8287481934",
   socials: {
     github: "https://github.com/anshul1729-in",
     linkedin: "https://linkedin.com/in/anshulpal101",
@@ -74,63 +59,6 @@ export const PERSONAL_INFO = {
     { label: "Flagship Projects", value: "8+ Engineered" }
   ]
 };
-
-export const RESUME_TRACKS: ResumeTrack[] = [
-  {
-    id: 'systems',
-    title: "Cloud Infrastructure & Systems Engineer",
-    subtitle: "Linux Kernel, Cgroups v2, Namespaces, Raft Consensus, POSIX Syscalls",
-    fileName: "Anshul_Pal_Cloud_Systems_Resume.pdf",
-    filePath: "/resumes/Anshul_Pal_Cloud_Systems_Resume.pdf",
-    badge: "Systems & Cloud",
-    badgeColor: "border-emerald-500/30 text-emerald-400 bg-emerald-500/10",
-    summary: "Tailored for Systems Engineering, Cloud Infrastructure, Platform, and SRE roles. Emphasizes low-level OS internals, Raft consensus algorithm implementation, container virtualization primitives, and socket networking.",
-    targetRoles: ["Systems Software Engineer", "Cloud Infrastructure Engineer", "Site Reliability Engineer (SRE)", "Platform Engineer"],
-    keyHighlights: [
-      "Fault-tolerant Raft consensus protocol written in Go over raw TCP RPCs with zero external libraries.",
-      "Custom Linux container runtime written in Go with CLONE_NEWPID, CLONE_NEWNET, pivot_root, and Cgroups v2 throttling.",
-      "POSIX-compliant shell in C orchestrating processes via fork, execve, waitpid, arbitrary pipelines, and signal multiplexing.",
-      "RFC 5321/RFC 5322 asynchronous custom SMTP mail server and Render Infrastructure as Code."
-    ],
-    featuredProjects: ["miniraft", "minicontainer", "minishell", "personal-email-server"]
-  },
-  {
-    id: 'core',
-    title: "Core Software Engineer",
-    subtitle: "Distributed Systems, High Availability, Concurrency, Algorithms & Data Structures",
-    fileName: "Anshul_Pal_Core_SWE_Resume.pdf",
-    filePath: "/resumes/Anshul_Pal_Core_SWE_Resume.pdf",
-    badge: "Core SWE",
-    badgeColor: "border-cyan-500/30 text-cyan-400 bg-cyan-500/10",
-    summary: "Tailored for Core SWE, Generalist Software Engineer, and Backend Engineering positions at top tech organizations. Focuses on systems fundamentals, distributed algorithms, concurrency, and performance optimization.",
-    targetRoles: ["Software Engineer (L3 / Early Career)", "Core Backend SWE", "Distributed Systems Engineer", "Generalist SWE"],
-    keyHighlights: [
-      "Rigorous distributed consensus implementation (leader election 300-600ms, strict quorum math, sub-second failover).",
-      "Low-level C systems orchestration, file descriptor table rewiring with pipe() and dup2(), and job control.",
-      "Algorithmic recommendation engine with exponential time-decay scoring (λ = exp(-Δt/7d)) and PostgreSQL window CTEs.",
-      "Production-grade full-stack delivery with sub-second LCP and zero layout shift."
-    ],
-    featuredProjects: ["miniraft", "minishell", "Music-app", "minicontainer"]
-  },
-  {
-    id: 'fullstack',
-    title: "AI & Full-Stack Software Engineer",
-    subtitle: "Next.js App Router, React 19, Supabase RLS Auth, Web Audio API, Web3 & Solana",
-    fileName: "Anshul_Pal_AI_FullStack_Resume.pdf",
-    filePath: "/resumes/Anshul_Pal_AI_FullStack_Resume.pdf",
-    badge: "AI & Full-Stack",
-    badgeColor: "border-purple-500/30 text-purple-400 bg-purple-500/10",
-    summary: "Tailored for Full-Stack, Web Application, AI-integrated, and Web3 Engineering roles. Showcases end-to-end platform design, algorithmic telemetry, multi-tenant databases, real-time UI, and cryptographic signing.",
-    targetRoles: ["Full-Stack Software Engineer", "Frontend / Product SWE", "AI Web Applications Engineer", "Web3 Engineer"],
-    keyHighlights: [
-      "NeonWave: Algorithmic audio streaming platform with Markov transition chains and 60fps Web Audio visualizer.",
-      "Sanctuary: Daily engineering reflection platform with dual-storage (localStorage + Supabase RLS) and TipTap ProseMirror.",
-      "Cendex: Non-custodial DEX with Jupiter AMM aggregator routing and Solana VersionedTransaction signing.",
-      "Amigo-CLI: Reverse-engineered Moodle REST API client with automated offline study guide generation."
-    ],
-    featuredProjects: ["Music-app", "sanctuary", "cendex", "amigo-cli"]
-  }
-];
 
 export const PROJECTS: Project[] = [
   {
@@ -463,14 +391,12 @@ export const TERMINAL_COMMANDS: Record<string, { desc: string; output: string | 
       "  whoami       - Display candidate engineering profile summary",
       "  about        - View core philosophy and engineering disciplines",
       "  projects     - List all engineered systems and proof-of-work",
-      "  resumes      - Inspect available resume variants (AI, Cloud, Core)",
-      "  cat <resume> - Preview specific resume details (systems | core | fullstack)",
       "  skills       - View categorized technical competencies",
       "  education    - Display university credentials and expected graduation",
       "  experience   - View professional engineering history",
       "  curl raft    - Display Raft consensus architecture ASCII diagram",
       "  curl cont    - Display Linux container runtime isolation ASCII diagram",
-      "  contact      - Display email, phone, and social contact links",
+      "  contact      - Display email and social contact links",
       "  clear        - Clear the terminal screen"
     ]
   },
@@ -530,7 +456,6 @@ export const TERMINAL_COMMANDS: Record<string, { desc: string; output: string | 
     desc: "Display contact information",
     output: [
       "Email:    anshul6272@gmail.com",
-      "Phone:    +91 8287481934",
       "GitHub:   https://github.com/anshul1729-in",
       "LinkedIn: https://linkedin.com/in/anshulpal101",
       "Twitter:  https://x.com/Anshul1729in"
