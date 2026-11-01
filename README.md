@@ -1,32 +1,80 @@
-# React + TypeScript + Vite
+# Anshul Pal — Systems & Full-Stack Software Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **"I build systems from first principles — from Raft consensus clusters and Linux container runtimes to algorithmic recommendation engines and high-throughput platforms."**
 
-Currently, two official plugins are available:
+A modern, high-performance developer portfolio built with **React 19**, **TypeScript**, **Tailwind CSS**, and **Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌟 Key Highlights & Engineering Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **3-in-1 Role-Tailored Resume Station (`#resumes`):**
+   - Features 3 specialized ATS-tailored resumes directly viewable and downloadable:
+     - 🚀 **Cloud Infrastructure & Systems Engineer** (`/resumes/Anshul_Pal_Cloud_Systems_Resume.pdf`)
+     - ⚡ **Core Software Engineer** (`/resumes/Anshul_Pal_Core_SWE_Resume.pdf`)
+     - 🤖 **AI & Full-Stack Software Engineer** (`/resumes/Anshul_Pal_AI_FullStack_Resume.pdf`)
+   - Interactive role selector dynamically highlights relevant projects, key bullets, and download options.
 
-## Expanding the Oxlint configuration
+2. **First-Principles Architecture Simulators (`#architecture`):**
+   - **Miniraft (Raft Consensus Simulator):** Live interactive simulation of 3-node distributed consensus, two-phase commit log replication, quorum verification ($\lfloor 3/2 \rfloor + 1 = 2$), randomized leader election timeouts (300–600ms), and automated `kill -9` leader failover (~400ms).
+   - **Minicontainer (Linux Sandbox Engine):** Live simulation of `CLONE_NEWPID`, `CLONE_NEWNS`, `pivot_root`, and Linux Cgroups v2 hardware bounds (50MB RAM ceiling and 50% CPU core quota).
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+3. **Flagship Proof-of-Work Showcase (`#projects`):**
+   - Real-time search and filter by domain (`Distributed & Consensus`, `Linux & Systems`, `Full-Stack & Web3`, `CLI & Low-Level`).
+   - One-click `git clone` command copying.
+   - Expandable architecture diagrams and metrics tags for each project (`miniraft`, `minicontainer`, `minishell`, `NeonWave`, `Sanctuary`, `Cendex`, `Amigo-CLI`, `personal-email-server`, `http-server-py`).
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+4. **Interactive Systems Terminal / CLI (`$ ./anshul.sh`):**
+   - Built-in interactive Unix-like shell with command history, tab autocomplete suggestions, and executable commands:
+     - `help`, `whoami`, `about`, `projects`, `skills`, `education`, `experience`, `resumes`, `cat <systems|core|fullstack>`, `curl raft`, `curl cont`, `contact`, `clear`.
+   - Accessible via the **CLI Mode** button or keyboard shortcut (`Ctrl + \`` or `Cmd + K`).
+
+5. **Education & Trajectory (`#timeline`):**
+   - Academic credentials: **Bachelor of Computer Applications (BCA) – Computer Science** at **Amity University**, expected graduation **July 2027**.
+   - Work Experience: Freelance SWE at **PropertyLay** (Next.js App Router, Sub-second LCP, zero layout shift).
+
+6. **Contact & Direct Transmission (`#contact`):**
+   - Direct mailto dispatch form.
+   - 1-click clipboard copy for email (`anshul6272@gmail.com`) and phone (`+91 8287481934`).
+   - Verified profile links to GitHub (`@anshul1729-in`) and LinkedIn (`/in/anshulpal101`).
+
+---
+
+## 🛠️ Local Development
+
+### Prerequisites
+- Node.js (v18+)
+- pnpm (v9+) or npm
+
+### Run Locally
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+```bash
+pnpm build
+```
+The optimized static production bundle is generated in `dist/`.
+
+### Preview Production Build
+```bash
+pnpm preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 🚀 One-Click Deployments
+
+### Deploy to Vercel
+```bash
+npx vercel
+```
+
+### Deploy to GitHub Pages
+The project is built as a zero-dependency static application. You can push this repo to GitHub and enable GitHub Pages on the `dist` folder or use GitHub Actions.
